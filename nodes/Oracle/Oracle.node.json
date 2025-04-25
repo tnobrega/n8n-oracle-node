@@ -1,0 +1,9 @@
+{
+  "node": "n8n-nodes-oracle",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Development", "Data & Storage"],
+  "subcategories": {
+    "Data & Storage": ["Database"]
+  }
+}
