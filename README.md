@@ -1,69 +1,81 @@
-# Conector Oracle para n8n
-
-Este conector permite a integração com bancos de dados Oracle diretamente no n8n, oferecendo operações para executar consultas e instruções SQL.
+Here is the translated and structured documentation in English:
 
 ---
 
-## 📥 Instalação
-1. Instale o pacote no diretório `nodes` do n8n:
+# Oracle Connector for n8n
+
+This connector enables direct integration with Oracle databases in n8n, offering operations to execute queries and SQL statements.
+
+---
+
+## 📥 Installation
+
+1. Install the package in the `nodes` directory of n8n:
 ```bash
 pnpm install n8n-nodes-oracle
 ```
-2. Reinicie o n8n.
+2. Restart n8n.
 
 ---
 
-## 🔑 Configuração de Credenciais
-### Parâmetros Necessários:
-| Campo                              | Descrição                                                                 |
-|------------------------------------|---------------------------------------------------------------------------|
-| **Tipo de Conexão**                | `Básica` (detalhes manuais) ou `String de Conexão` (variável de ambiente) |
-| **Host**                           | Endereço do servidor Oracle (apenas para tipo básico)                     |
-| **Porta**                          | Porta do Oracle (padrão: 1521)                                           |
-| **Service Name**                   | Nome do serviço/SID da base                                              |
-| **Nome da Variável de Ambiente**   | Nome da variável contendo a string de conexão (ex: `ORACLE_CONN_STRING`)  |
-| **Usuário**                        | Usuário do banco de dados                                                |
-| **Senha**                          | Senha do usuário                                                         |
-| **Modo Cliente**                   | `Thin` (leve) ou `Thick` (requer driver Oracle completo)                  |
+## 🔑 Credential Configuration
+
+### Required Parameters:
+
+| Field                             | Description                                                                |
+|----------------------------------|----------------------------------------------------------------------------|
+| **Connection Type**              | `Basic` (manual details) or `Connection String` (environment variable)     |
+| **Host**                         | Oracle server address (for Basic type only)                                |
+| **Port**                         | Oracle port (default: 1521)                                                |
+| **Service Name**                 | Database Service Name or SID                                               |
+| **Environment Variable Name**    | Name of the variable containing the connection string (e.g., `ORACLE_CONN_STRING`) |
+| **User**                         | Database username                                                          |
+| **Password**                     | User password                                                              |
+| **Client Mode**                  | `Thin` (lightweight) or `Thick` (requires full Oracle client)             |
 
 ---
 
-## 🛠 Operações Disponíveis
+## 🛠 Available Operations
+
 ### 1. `Execute Query` (SELECT)
-- **SQL Query**: Consulta SQL para recuperação de dados.
+- **SQL Query**: SQL query to retrieve data.
   ```sql
   SELECT * FROM employees WHERE department_id = :deptId
   ```
-- **Parameters**: Parâmetros em JSON (ex: `{"deptId": 20}`).
-- **Result Format**: Formatação dos resultados (`Uppercase`, `Lowercase`, `Original`).
+- **Parameters**: JSON parameters (e.g., `{"deptId": 20}`).
+- **Result Format**: Result formatting (`Uppercase`, `Lowercase`, `Original`).
 
 ### 2. `Execute Statement` (DML/DDL)
-- **SQL Query**: Comandos como `INSERT`, `UPDATE`, ou chamadas de procedimento.
+- **SQL Query**: Commands such as `INSERT`, `UPDATE`, or procedure calls.
   ```sql
   INSERT INTO employees (name, role) VALUES (:name, :role)
   ```
-- **Auto Commit**: Habilita commit automático de transações.
+- **Auto Commit**: Enables automatic transaction commit.
 
 ---
 
-## ⚙️ Configurações Avançadas
-### Opções de Pool de Conexões:
-| Parâmetro            | Descrição                        | Padrão |
-|----------------------|----------------------------------|--------|
-| **Pool Min**         | Conexões mínimas no pool         | 1      |
-| **Pool Max**         | Conexões máximas no pool         | 10     |
-| **Queue Timeout (Ms)**| Tempo de espera por conexão (ms) | 30000  |
+## ⚙️ Advanced Settings
+
+### Connection Pool Options:
+
+| Parameter              | Description                          | Default |
+|------------------------|--------------------------------------|---------|
+| **Pool Min**           | Minimum connections in the pool      | 1       |
+| **Pool Max**           | Maximum connections in the pool      | 10      |
+| **Queue Timeout (Ms)** | Connection wait timeout in ms        | 30000   |
 
 ---
 
-## 📋 Exemplo de Uso
-### Cenário: Consulta de Funcionários
-1. **Credenciais**:  
-   - Tipo: `Básica`  
+## 📋 Usage Example
+
+### Scenario: Employee Query
+
+1. **Credentials**:  
+   - Type: `Basic`  
    - Host: `oracle-prod.example.com`  
-   - Usuário/Senha: `admin/******`
+   - User/Password: `admin/******`
 
-2. **Nó Oracle**:
+2. **Oracle Node**:
    - **Operation**: `Execute Query`  
    - **Query**:
      ```sql
@@ -72,7 +84,7 @@ pnpm install n8n-nodes-oracle
    - **Parameters**: `{"minSalary": 5000}`  
    - **Format**: `Uppercase`
 
-3. **Saída**:
+3. **Output**:
    ```json
    [
      { "FIRST_NAME": "John", "SALARY": 7500 },
@@ -82,27 +94,37 @@ pnpm install n8n-nodes-oracle
 
 ---
 
-## ⚠️ Requisitos e Notas
-1. **Cliente Oracle**:  
-   - Para modo `Thick`, defina as variáveis de ambiente:  
+## ⚠️ Requirements and Notes
+
+1. **Oracle Client**:  
+   - For `Thick` mode, set the environment variables:
      ```bash
      ORACLE_CLIENT_LIB_PATH=/path/to/instantclient
      ORACLE_CLIENT_CONFIG_DIR=/path/to/network/admin
      ```
 
-2. **Validação de Consultas**:  
-   - A operação `Execute Query` bloqueia comandos não-SELECT (ex: `INSERT`).
+2. **Query Validation**:  
+   - The `Execute Query` operation blocks non-SELECT commands (e.g., `INSERT`).
 
-3. **Strings de Conexão**:  
-   - Exemplo de variável de ambiente:  
+3. **Connection Strings**:  
+   - Example of environment variable:
      ```
      ORACLE_CONN_STRING=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle-host)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)))
      ```
 
 ---
 
-## 🔄 Recursos Adicionais
-- **Repositório**: [GitHub](https://github.com/rempel/n8n-oracle-connector)  
-- **Suporte**: Envie issues no GitHub para reportar problemas.  
+## 🔄 Additional Resources
 
-Documentação atualizada para versão 1.0.0. Testado com Oracle Database 19c e n8n 1.18+.
+- **Repository**: [GitHub](https://github.com/rempel/n8n-oracle-connector)  
+- **Support**: Submit issues on GitHub to report problems.  
+
+Documentation updated for version 1.0.0. Tested with Oracle Database 19c and n8n 1.18+.
+
+---
+
+## 💸 Buy Me a Coffee
+
+If you like this project, please consider buying me a coffee. Thank you for your support!
+
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/rempel)

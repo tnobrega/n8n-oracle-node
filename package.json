@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-oracle",
+  "name": "@rempel/n8n-nodes-oracle",
   "version": "1.0.0",
   "description": "Oracle Database connector for n8n",
   "keywords": [
@@ -7,6 +7,9 @@
     "n8n-nodes-oracle"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "",
   "author": {
     "name": "Gabriel Rempel",
