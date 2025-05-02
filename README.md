@@ -1,7 +1,3 @@
-Here is the translated and structured documentation in English:
-
----
-
 # Oracle Connector for n8n
 
 This connector enables direct integration with Oracle databases in n8n, offering operations to execute queries and SQL statements.
