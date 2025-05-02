@@ -8,7 +8,7 @@ This connector enables direct integration with Oracle databases in n8n, offering
 
 1. Install the package in the `nodes` directory of n8n:
 ```bash
-pnpm install n8n-nodes-oracle
+pnpm install @rempel/n8n-nodes-oracle
 ```
 2. Restart n8n.
 
