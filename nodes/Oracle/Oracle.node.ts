@@ -277,7 +277,6 @@ export class Oracle implements INodeType {
         },
         default: '{}',
         description: 'Bind parameters in JSON format',
-				placeholder: '{"id": 1}',
       },
       {
         displayName: 'Auto Commit',
