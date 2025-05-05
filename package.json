@@ -1,6 +1,6 @@
 {
   "name": "@rempel/n8n-nodes-oracle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Oracle Database connector for n8n",
   "keywords": [
     "n8n-community-node-package",
@@ -56,6 +56,9 @@
     "oracledb": "^6.8.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "oracledb": "^6.8.0"
   },
   "peerDependencies": {
     "n8n-workflow": "*"

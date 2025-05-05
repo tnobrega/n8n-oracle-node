@@ -115,7 +115,7 @@ pnpm install @rempel/n8n-nodes-oracle
 - **Repository**: [GitHub](https://github.com/rempel/n8n-oracle-connector)  
 - **Support**: Submit issues on GitHub to report problems.  
 
-Documentation updated for version 1.0.0. Tested with Oracle Database 19c and n8n 1.18+.
+Documentation updated for version 1.0.3. Tested with Oracle Database 19c and n8n 1.18+.
 
 ---
 

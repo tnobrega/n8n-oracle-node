@@ -7,7 +7,6 @@ import {
 } from 'n8n-workflow';
 import * as oracledb from 'oracledb';
 
-// Helper class to manage Oracle operations
 class OracleHelper {
   private readonly context: IExecuteFunctions;
 
@@ -28,13 +27,11 @@ class OracleHelper {
     };
 
     try {
-      // Initialize Oracle client
       oracledb.initOracleClient({
         libDir: process.env.ORACLE_CLIENT_LIB_PATH,
         configDir: process.env.ORACLE_CLIENT_CONFIG_DIR,
       });
     } catch (error) {
-      // Handle case where client is already initialized
       if (!(error as Error).message.includes('already initialized')) {
         throw error;
       }
@@ -84,7 +81,6 @@ class OracleHelper {
       try {
         connection = await oracledb.getConnection();
         const result = await connection.execute(query, params, { outFormat: oracledb.OUT_FORMAT_OBJECT });
-        // Fix for handling undefined or null rows
         const rows = result.rows || [];
         const formattedResults = this.formatResults(rows as any[], format);
         returnData.push(...formattedResults);
@@ -158,7 +154,6 @@ class OracleHelper {
 
   formatResults(rows: any[], format: string): INodeExecutionData[] {
     if (!rows || rows.length === 0) {
-      // Fix: Return a proper INodeExecutionData array even when empty
       return this.context.helpers.returnJsonArray([{}]);
     }
 
@@ -202,6 +197,7 @@ class OracleHelper {
 export class Oracle implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Oracle Database',
+		documentationUrl: 'https://rempel.github.io/n8n-oracle-connector/#/',
     name: 'oracle',
     icon: 'file:oracle.svg',
     group: ['transform'],
@@ -281,6 +277,7 @@ export class Oracle implements INodeType {
         },
         default: '{}',
         description: 'Bind parameters in JSON format',
+				placeholder: '{"id": 1}',
       },
       {
         displayName: 'Auto Commit',
@@ -347,7 +344,6 @@ export class Oracle implements INodeType {
     const resource = this.getNodeParameter('resource', 0) as string;
     const operation = this.getNodeParameter('operation', 0) as string;
 
-    // Create helper with current execution context
     const helper = new OracleHelper(this);
 
     try {
