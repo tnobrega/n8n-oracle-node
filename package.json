@@ -1,16 +1,23 @@
 {
   "name": "@rempel/n8n-nodes-oracle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Oracle Database connector for n8n",
   "keywords": [
+    "n8n",
     "n8n-community-node-package",
-    "n8n-nodes-oracle"
+    "n8n-nodes-oracle",
+    "Oracle",
+    "Database",
+    "DB",
+    "SQL",
+    "client",
+    "community",
   ],
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "",
+  "homepage": "https://rempel.github.io/n8n-oracle-connector/#/",
   "author": {
     "name": "Gabriel Rempel",
     "email": "rempel@hidev.cc"

@@ -5,20 +5,20 @@ import {
 
 export class OracleApi implements ICredentialType {
   name = 'oracleApi';
-  displayName = 'Oracle Database API';
+  displayName = 'Oracle Database (Credentials)';
   documentationUrl = 'https://rempel.github.io/n8n-oracle-connector/#/';
   properties: INodeProperties[] = [
     {
-      displayName: 'Tipo de Conexão',
+      displayName: 'Connection Type',
       name: 'connectionType',
       type: 'options',
       options: [
         {
-          name: 'Básica',
+          name: 'Basic',
           value: 'basic',
         },
         {
-          name: 'String de Conexão (Variável de Ambiente)',
+          name: 'Connection String (Environment Variable)',
           value: 'connectionString',
         },
       ],
@@ -37,7 +37,7 @@ export class OracleApi implements ICredentialType {
       required: true,
     },
     {
-      displayName: 'Porta',
+      displayName: 'Port',
       name: 'port',
       type: 'number',
       displayOptions: {
@@ -61,7 +61,7 @@ export class OracleApi implements ICredentialType {
       required: true,
     },
     {
-      displayName: 'Nome da Variável de Ambiente',
+      displayName: 'Environment Variable Name',
       name: 'connectionStringEnv',
       type: 'string',
       displayOptions: {
@@ -74,14 +74,14 @@ export class OracleApi implements ICredentialType {
       required: true,
     },
     {
-      displayName: 'Usuário',
+      displayName: 'User',
       name: 'user',
       type: 'string',
       default: '',
       required: true,
     },
     {
-      displayName: 'Senha',
+      displayName: 'Password',
       name: 'password',
       type: 'string',
       typeOptions: {
@@ -91,7 +91,7 @@ export class OracleApi implements ICredentialType {
       required: true,
     },
     {
-      displayName: 'Modo Cliente',
+      displayName: 'Client Mode',
       name: 'clientMode',
       type: 'options',
       options: [
@@ -99,7 +99,7 @@ export class OracleApi implements ICredentialType {
         { name: 'Thick', value: 'thick' },
       ],
       default: 'thin',
-      description: 'Configuração do modo cliente Oracle',
+      description: 'Oracle client mode configuration',
     },
   ];
 }
