@@ -11,7 +11,7 @@
     "DB",
     "SQL",
     "client",
-    "community",
+    "community"
   ],
   "license": "MIT",
   "publishConfig": {
