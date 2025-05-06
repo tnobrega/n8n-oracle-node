@@ -1,6 +1,6 @@
 {
   "name": "@rempel/n8n-nodes-oracle",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Oracle Database connector for n8n",
   "keywords": [
     "n8n",
@@ -60,7 +60,6 @@
     "eslint": "^8.57.1",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^4.0.2",
-    "oracledb": "^6.8.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   },

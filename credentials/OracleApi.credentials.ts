@@ -1,12 +1,18 @@
 import {
   ICredentialType,
   INodeProperties,
+  Icon,
 } from 'n8n-workflow';
 
 export class OracleApi implements ICredentialType {
   name = 'oracleApi';
   displayName = 'Oracle Database API';
   documentationUrl = 'https://rempel.github.io/n8n-oracle-connector/#/';
+  icon: Icon = {
+    light: 'file:oracle.svg',
+    dark: 'file:oracle.svg',
+  };
+
   properties: INodeProperties[] = [
     {
       displayName: 'Connection Type',

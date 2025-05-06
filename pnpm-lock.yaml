@@ -11,6 +11,9 @@ importers:
       n8n-workflow:
         specifier: '*'
         version: 1.82.0
+      oracledb:
+        specifier: ^6.8.0
+        version: 6.8.0
     devDependencies:
       '@types/node':
         specifier: ^22.15.2
@@ -30,9 +33,6 @@ importers:
       gulp:
         specifier: ^4.0.2
         version: 4.0.2
-      oracledb:
-        specifier: ^6.8.0
-        version: 6.8.0
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
