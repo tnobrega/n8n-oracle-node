@@ -5,7 +5,7 @@ import {
 
 export class OracleApi implements ICredentialType {
   name = 'oracleApi';
-  displayName = 'Oracle Database (Credentials)';
+  displayName = 'Oracle Database API';
   documentationUrl = 'https://rempel.github.io/n8n-oracle-connector/#/';
   properties: INodeProperties[] = [
     {
