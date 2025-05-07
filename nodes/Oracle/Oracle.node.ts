@@ -23,19 +23,21 @@ class OracleHelper {
       host: string;
       port: number;
       serviceName: string;
-      clientMode: string;
+			clientMode: string;
     };
 
-    try {
-      oracledb.initOracleClient({
-        libDir: process.env.ORACLE_CLIENT_LIB_PATH,
-        configDir: process.env.ORACLE_CLIENT_CONFIG_DIR,
-      });
-    } catch (error) {
-      if (!(error as Error).message.includes('already initialized')) {
-        throw error;
-      }
-    }
+		if (credentials.clientMode !== 'thin') {
+			try {
+				oracledb.initOracleClient({
+					libDir: process.env.ORACLE_CLIENT_LIB_PATH,
+					configDir: process.env.ORACLE_CLIENT_CONFIG_DIR,
+				});
+			} catch (error) {
+				if (!(error as Error).message.includes('already initialized')) {
+					throw error;
+				}
+			}
+		}
 
     const poolConfig = {
       user: credentials.user,
