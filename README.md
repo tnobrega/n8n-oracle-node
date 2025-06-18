@@ -2,6 +2,12 @@
 
 This connector enables direct integration with Oracle databases in n8n, offering operations to execute queries and SQL statements.
 
+## 💸 Buy Me a Coffee
+
+If you like this project, please consider buying me a coffee. Thank you for your support!
+
+[![Buy Me a Coffee](https://hidev.cc/wp-content/uploads/2025/06/default-yellow-e1750248142894.webp)](https://www.buymeacoffee.com/rempel)
+
 ---
 
 ## 📥 Installation
@@ -115,12 +121,4 @@ pnpm install @rempel/n8n-nodes-oracle
 - **Repository**: [GitHub](https://github.com/rempel/n8n-oracle-connector)  
 - **Support**: Submit issues on GitHub to report problems.  
 
-Documentation updated for version 1.0.8. Tested with Oracle Database 19c and n8n 1.18+.
-
----
-
-## 💸 Buy Me a Coffee
-
-If you like this project, please consider buying me a coffee. Thank you for your support!
-
-[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/rempel)
+Documentation updated for version 1.0.9. Tested with Oracle Database 19c and n8n 1.18+.

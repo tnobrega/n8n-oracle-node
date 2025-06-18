@@ -1,6 +1,6 @@
 {
   "name": "@rempel/n8n-nodes-oracle",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Oracle Database connector for n8n",
   "keywords": [
     "n8n",
@@ -30,7 +30,7 @@
     "node": ">=18.10",
     "pnpm": ">=9.1"
   },
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@10.12.1",
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -54,12 +54,12 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^22.15.2",
-    "@types/oracledb": "^6.6.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "eslint": "^8.57.1",
+    "@types/node": "^24.0.3",
+    "@types/oracledb": "^6.6.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^9.29.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.1",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   },
