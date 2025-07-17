@@ -1,6 +1,6 @@
 {
-  "name": "@rempel/n8n-nodes-oracle",
-  "version": "1.0.9",
+  "name": "tnobrega/n8n-nodes-oracle",
+  "version": "1.0",
   "description": "Oracle Database connector for n8n",
   "keywords": [
     "n8n",
@@ -17,14 +17,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://rempel.github.io/n8n-oracle-connector/#/",
+  "homepage": "https://github.com/tnobrega/n8n-oracle-node/#/",
   "author": {
-    "name": "Gabriel Rempel",
-    "email": "rempel@hidev.cc"
+    "name": "Thiago Nobrega",
+    "email": "eu@tnobre.ga"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rempel/n8n-oracle-connector.git"
+    "url": "https://github.com/tnobrega/n8n-oracle-node.git"
   },
   "engines": {
     "node": ">=18.10"
